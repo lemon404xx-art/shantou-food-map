@@ -1118,10 +1118,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
         <div class="map-heading"><h2 id="map-title"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>把好吃的，连成一程</h2><span id="map-status" class="map-status" data-state="loading" role="status" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span id="map-status-text">正在连接地图</span></span></div>
         <div class="map-canvas">
           <div id="map" role="region" aria-label="汕头店铺互动地图，可使用方向键移动、加减键缩放。数字标记与清单对应。"></div>
-          <div class="map-tools"><button id="fit-map" class="map-tool" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg>看全图</button></div>
+          <div class="map-tools"><button id="online-map" class="map-tool" type="button" hidden>重试在线地图</button><button id="reference-map" class="map-tool" type="button">静态备用图</button><button id="fit-map" class="map-tool" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#i-fit"/></svg>看全图</button></div>
           <div id="map-empty-hint" class="map-empty-hint" hidden></div>
           <div id="map-unavailable" class="map-unavailable" aria-labelledby="map-fallback-title">
-            <div class="map-fallback-content"><div class="fallback-icon"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg></div><h3 id="map-fallback-title">好味道，正在定位。</h3><p id="map-fallback-description">正在读取内置底图，店铺清单可以先看起来。</p><div class="fallback-actions"><button id="retry-map" type="button" class="outline-button" hidden><svg class="icon" aria-hidden="true"><use href="#i-retry"/></svg>重试地图</button><a id="fallback-amap" class="solid-button" href="https://uri.amap.com/search?keyword=%E6%B1%95%E5%A4%B4%E7%BE%8E%E9%A3%9F&amp;city=%E6%B1%95%E5%A4%B4&amp;view=map" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-navigation"/></svg>用高德找美食</a></div></div>
+            <div class="map-fallback-content"><div class="fallback-icon"><svg class="icon" aria-hidden="true"><use href="#i-map"/></svg></div><h3 id="map-fallback-title">好味道，正在定位。</h3><p id="map-fallback-description">正在连接在线地图，放大后会加载更详细的道路与地名。</p><div class="fallback-actions"><button id="retry-map" type="button" class="outline-button" hidden><svg class="icon" aria-hidden="true"><use href="#i-retry"/></svg>重试地图</button><a id="fallback-amap" class="solid-button" href="https://uri.amap.com/search?keyword=%E6%B1%95%E5%A4%B4%E7%BE%8E%E9%A3%9F&amp;city=%E6%B1%95%E5%A4%B4&amp;view=map" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-navigation"/></svg>用高德找美食</a></div></div>
           </div>
         </div>
         <div class="map-footer"><div class="map-legend" aria-label="地图颜色图例"><span><i class="category-dot" style="--category-color:var(--beef)"></i>牛肉火锅</span><span><i class="category-dot" style="--category-color:var(--seafood)"></i>海鲜砂锅</span><span><i class="category-dot" style="--category-color:var(--dessert)"></i>甜品饮料</span><span><i class="category-dot" style="--category-color:var(--goose)"></i>卤鹅</span></div><p id="map-caption" class="map-caption">点数字看推荐 · 地点以店铺地址为准</p></div>
@@ -1137,7 +1137,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     <div class="dialog-layout"><header class="dialog-header"><p class="dialog-kicker">出发前，翻一翻</p><button class="close-button" type="button" data-close aria-label="关闭行前提醒" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="dialog-body"><h2 id="notes-title" class="dialog-title">好好吃，也要好好安排。</h2><p class="dialog-intro">姐姐特意提醒的几件事，先记下来。</p><ol class="notes-list"><li><h3>合意桐坑 · 留肉与预算先确认</h3><p>提前请熟人帮忙留肉，预算也先确认，再安排大家到店。</p></li><li><h3>亚细 · 先问时价</h3><p>姐姐说不便宜，点单前先问清当天时价和份量。</p></li><li><h3>石炮台 · 看清门头</h3><p>两家容易混淆，到店前认清门头，别只凭店名找店。</p></li><li><h3>定位备注 · 集合前再看一眼</h3><p>部分标记是楼宇或市场中心的近似位置，请按店铺地址与定位备注找入口。石炮台果汁和卤鹅店位置尚未确认，暂不在地图落点；确认具体店铺后再导航。</p></li></ol><p class="local-note">点爱心可保存「想吃」清单，只保存在当前浏览器。分享地图不会同步你的收藏；浏览器禁止本地存储时，收藏只在当前页面有效。</p></div></div>
   </dialog>
   <dialog id="sources-dialog" aria-labelledby="sources-title">
-    <div class="dialog-layout"><header class="dialog-header"><p class="dialog-kicker">这张地图，怎么来的</p><button class="close-button" type="button" data-close aria-label="关闭来源说明" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="dialog-body"><h2 id="sources-title" class="dialog-title">有推荐，也有出处。</h2><p class="dialog-intro">地址核对日期：2026 年 10 月 8—9 日（每家店见详情）</p><dl class="source-dl"><dt>口味推荐 · 来自用户</dt><dd>店铺推荐、提醒与推荐语来自用户提供的资料。吃食信息按每家店的标签与来源说明区分：姐姐明确推荐的菜品与一般店铺品类分别标注；未标明推荐来源的内容仅作吃食信息参考。</dd><dt>店铺地址 · 大众点评</dt><dd>地址资料按大众点评店铺信息核对，具体页面见每家店详情中的来源链接。「地址已核对」仅表示资料核对状态；「待确认」的条目仍需进一步核实。营业时间、分店状态与菜单可能变化，请以商家当日信息为准。</dd><dt>地图位置 · 辅助找店</dt><dd>数字与店名标记对应清单；未提供坐标的店仅出现在清单中。部分标记使用楼宇或市场中心的近似位置，具体说明见店铺详情。石炮台已确认为总店，春梅里卤鹅馆已确认为龙眼南店；春梅里的地图标记为龙眼园北区区域参考点，请按详情门牌找店。导航前请核对实际分店与入口。团建范围的底图已内置在网页中，覆盖这9家店，支持缩放、拖动与点击查看。底图与位置参考来自360地图，采用同一坐标系统；不是实时地图。具体门牌及附近参考点见店铺详情。</dd><dt>原始链接与照片</dt><dd>各店详情列出提供的来源链接。照片仅在资料中附有图片时展示，图片说明沿用提供的描述；没有配图的店不会使用替代店铺照片。</dd><dt>收藏与分享</dt><dd>手机和微信浏览器可通过线上网址查看。店铺资料、照片、团建范围底图和页面功能均已内置；底图不是实时地图。点评及外部导航需要联网。收藏保存在当前浏览器，分享网址不会同步个人收藏。下载HTML也可作为离线备份。</dd></dl><p class="local-note">一份用来一起讨论的吃喝清单。确认地址、约好时间，剩下的交给好胃口。</p></div></div>
+    <div class="dialog-layout"><header class="dialog-header"><p class="dialog-kicker">这张地图，怎么来的</p><button class="close-button" type="button" data-close aria-label="关闭来源说明" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="dialog-body"><h2 id="sources-title" class="dialog-title">有推荐，也有出处。</h2><p class="dialog-intro">地址核对日期：2026 年 10 月 8—9 日（每家店见详情）</p><dl class="source-dl"><dt>口味推荐 · 来自用户</dt><dd>店铺推荐、提醒与推荐语来自用户提供的资料。吃食信息按每家店的标签与来源说明区分：姐姐明确推荐的菜品与一般店铺品类分别标注；未标明推荐来源的内容仅作吃食信息参考。</dd><dt>店铺地址 · 大众点评</dt><dd>地址资料按大众点评店铺信息核对，具体页面见每家店详情中的来源链接。「地址已核对」仅表示资料核对状态；「待确认」的条目仍需进一步核实。营业时间、分店状态与菜单可能变化，请以商家当日信息为准。</dd><dt>地图位置 · 辅助找店</dt><dd>数字与店名标记对应清单；未提供坐标的店仅出现在清单中。部分标记使用楼宇或市场中心的近似位置，具体说明见店铺详情。石炮台已确认为总店，春梅里卤鹅馆已确认为龙眼南店；春梅里的地图标记为龙眼园北区区域参考点，请按详情门牌找店。导航前请核对实际分店与入口。默认使用360在线地图，缩放时加载不同精度的道路和地名，可拖动浏览其他区域。地图和位置参考使用同一坐标系统。连接失败时明确显示“静态备用图”；静态图放大不增加细节。具体门牌及附近参考点见店铺详情。</dd><dt>原始链接与照片</dt><dd>各店详情列出提供的来源链接。照片仅在资料中附有图片时展示，图片说明沿用提供的描述；没有配图的店不会使用替代店铺照片。</dd><dt>收藏与分享</dt><dd>手机和微信浏览器可通过线上网址查看。默认使用在线地图，缩放时加载对应精度的道路和地名，需要联网。静态备用图仅在连接失败或手动选择时显示，并明确标注；备用图放大不会增加细节。点评及外部导航也需要联网。收藏保存在当前浏览器，分享网址不会同步个人收藏。下载HTML也可作为离线备份。</dd></dl><p class="local-note">一份用来一起讨论的吃喝清单。确认地址、约好时间，剩下的交给好胃口。</p></div></div>
   </dialog>
   <dialog id="photo-dialog" class="photo-dialog" aria-labelledby="photo-title"><div class="dialog-layout"><header class="dialog-header"><h2 id="photo-title" class="dialog-kicker">店铺照片</h2><button class="close-button" type="button" data-close aria-label="关闭大图" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><figure class="photo-viewer"><img id="enlarged-photo" alt=""></figure><div id="photo-controls" class="photo-controls" hidden><button id="photo-prev" type="button" aria-label="上一张照片">← 上一张</button><span id="photo-counter" class="photo-counter" role="status" aria-live="polite"></span><button id="photo-next" type="button" aria-label="下一张照片">下一张 →</button></div></div></dialog>
   <dialog id="share-dialog" aria-labelledby="share-title"><div class="dialog-layout"><header class="dialog-header"><p class="dialog-kicker">把这一份好味，分享出去</p><button class="close-button" type="button" data-close aria-label="关闭分享" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></header><div class="dialog-body"><h2 id="share-title" class="dialog-title">一起约一顿。</h2><p id="share-description" class="dialog-intro">可长按或选中文字复制。</p><div id="share-text" class="share-text" tabindex="0" aria-label="可复制的分享内容"></div><div class="share-dialog-actions"><button id="copy-again" class="solid-button" type="button">复制分享内容</button><button id="select-share" class="outline-button" type="button">选中文字</button></div></div></div></dialog>
@@ -1184,6 +1184,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     let tileAttempt = 0;
     let mapReady = false;
     let embeddedLayer = null;
+    let mapMode = 'loading';
     const embeddedMap = JSON.parse($('embedded-basemap').textContent);
     let activeDialogShop = null;
     let photoViewer = null;
@@ -1627,36 +1628,104 @@ svg.leaflet-image-layer.leaflet-interactive path {
       $('map-empty-hint').hidden = pinned > 0;
       $('map-empty-hint').textContent = filtered.length ? '这些店暂未落点，请从清单打开高德搜索。' : shops.length ? '当前筛选没有店铺，试试其他口味。' : '店铺资料待补齐，先看看汕头。';
     }
+    function revealMap() {
+      $('map-unavailable').hidden = true;
+      $('map').removeAttribute('inert');
+      $('fit-map').disabled = false;
+    }
+    function useReferenceMap(reason = 'manual') {
+      if (!map) return;
+      ++tileAttempt;
+      clearTimeout(tileTimer);
+      if (tileLayer) { tileLayer.off(); map.removeLayer(tileLayer); tileLayer = null; }
+      mapMode = 'reference';
+      mapReady = false;
+      $('map').dataset.mode = 'reference';
+      map.setMinZoom(12); map.setMaxZoom(16);
+      const bounds = L.latLngBounds(embeddedMap.bounds);
+      map.setMaxBounds(bounds.pad(0.3));
+      if (!embeddedLayer) {
+        embeddedLayer = L.imageOverlay(embeddedMap.image, bounds, {
+          interactive: false,
+          attribution: '&copy; <a href="https://map.360.cn" target="_blank" rel="noopener noreferrer">360地图</a> · GS(2025)0206号'
+        });
+        embeddedLayer.on('load', revealMap);
+        embeddedLayer.on('error', () => failMap('备用图未能读取，请重试在线地图。'));
+        embeddedLayer.addTo(map);
+      }
+      revealMap();
+      $('online-map').hidden = false;
+      $('reference-map').hidden = true;
+      mapStatus(reason === 'network' ? '在线连接失败 · 当前为静态备用图' : '静态备用图 · 放大不增加细节', 'error');
+      refreshMapCaption();
+      fitMap(false);
+    }
     function loadTiles() {
       if (!map) return;
       clearTimeout(tileTimer);
-      if (embeddedLayer) {
-        $('map-unavailable').hidden = true;
-        $('map').removeAttribute('inert');
-        $('fit-map').disabled = false;
-        mapReady = true;
-        mapStatus('团建地图 · 已内置', 'ready');
-        return;
+      const token = ++tileAttempt;
+      if (tileLayer) { tileLayer.off(); map.removeLayer(tileLayer); tileLayer = null; }
+      if (embeddedLayer) { map.removeLayer(embeddedLayer); embeddedLayer = null; }
+      map.setMaxBounds(null);
+      map.setMinZoom(3); map.setMaxZoom(18);
+      mapMode = 'loading'; mapReady = false;
+      $('map').dataset.mode = 'loading';
+      $('online-map').hidden = true;
+      $('reference-map').hidden = false;
+      revealMap();
+      mapStatus('在线地图加载中…', 'loading');
+      const provider = providers[0];
+      let cycleLoaded = 0;
+      let cycleErrors = 0;
+      function armTimeout() {
+        clearTimeout(tileTimer);
+        tileTimer = setTimeout(() => {
+          if (token !== tileAttempt) return;
+          if (!cycleLoaded) useReferenceMap('network');
+          else if (cycleErrors) {
+            mapStatus('在线地图 · 部分区域未加载', 'error');
+            $('online-map').hidden = false;
+          }
+        }, 12000);
       }
-      const bounds = L.latLngBounds(embeddedMap.bounds);
-      map.setMaxBounds(bounds.pad(0.3));
-      embeddedLayer = L.imageOverlay(embeddedMap.image, bounds, {
-        interactive: false,
-        attribution: '&copy; <a href="https://map.360.cn" target="_blank" rel="noopener noreferrer">360地图</a> · GS(2025)0206号'
-      });
-      embeddedLayer.on('load', () => {
-        mapReady = true;
-        $('map-unavailable').hidden = true;
-        $('map').removeAttribute('inert');
-        $('fit-map').disabled = false;
-        mapStatus('团建地图 · 已内置', 'ready');
-        refreshMapCaption();
-      });
-      embeddedLayer.on('error', () => {
-        if (embeddedLayer) { map.removeLayer(embeddedLayer); embeddedLayer = null; }
-        failMap('内置底图未能读取，请刷新页面。店铺资料与导航入口仍可使用。');
-      });
-      embeddedLayer.addTo(map);
+      try {
+        tileLayer = L.tileLayer(provider.url, {
+          attribution: provider.attribution || '',
+          maxZoom: 18, referrerPolicy: 'no-referrer', ...provider.options
+        });
+        tileLayer.on('loading', () => {
+          if (token !== tileAttempt) return;
+          cycleLoaded = 0; cycleErrors = 0; armTimeout();
+          mapStatus('在线地图加载中…', 'loading');
+        });
+        tileLayer.on('tileload', () => {
+          if (token !== tileAttempt) return;
+          cycleLoaded++;
+          mapMode = 'online'; mapReady = true;
+          $('map').dataset.mode = 'online';
+          $('map').dataset.tileZoom = String(tileLayer._tileZoom);
+          mapStatus('在线地图 · 缩放加载道路细节', 'ready');
+        });
+        tileLayer.on('tileerror', () => {
+          if (token !== tileAttempt) return;
+          cycleErrors++;
+        });
+        tileLayer.on('load', () => {
+          if (token !== tileAttempt) return;
+          clearTimeout(tileTimer);
+          if (!cycleLoaded && cycleErrors) useReferenceMap('network');
+          else if (cycleErrors) {
+            mapStatus('在线地图 · 部分区域未加载', 'error');
+            $('online-map').hidden = false;
+          } else {
+            mapStatus('在线地图 · 缩放加载道路细节', 'ready');
+            $('online-map').hidden = true;
+          }
+          refreshMapCaption();
+        });
+        armTimeout();
+        tileLayer.addTo(map);
+      } catch { useReferenceMap('network'); }
     }
     function fitMap(animate = true) {
       if (!map) return;
@@ -1705,7 +1774,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
       }
       try {
         if (!map) {
-          map = L.map('map', { zoomSnap: 0.25, zoomControl: false, scrollWheelZoom: false, attributionControl: true, zoomAnimation: !reducedMotion, fadeAnimation: !reducedMotion, markerZoomAnimation: !reducedMotion, minZoom: 12, maxZoom: 16 });
+          map = L.map('map', { zoomSnap: 0.25, zoomControl: false, scrollWheelZoom: false, attributionControl: true, zoomAnimation: !reducedMotion, fadeAnimation: !reducedMotion, markerZoomAnimation: !reducedMotion, minZoom: 3, maxZoom: 18 });
           map.setView(SHANTOU, 12);
           L.control.zoom({ position: 'bottomright', zoomInTitle: '放大地图', zoomOutTitle: '缩小地图' }).addTo(map);
           map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener noreferrer">Leaflet</a>');
@@ -1723,8 +1792,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
     }
     $('fit-map').addEventListener('click', () => fitMap(true));
     $('retry-map').addEventListener('click', initMap);
+    $('online-map').addEventListener('click', loadTiles);
+    $('reference-map').addEventListener('click', () => useReferenceMap('manual'));
+    window.addEventListener('offline', () => useReferenceMap('network'));
     window.addEventListener('online', () => { if (!mapReady) initMap(); });
-    // The embedded basemap remains usable when the device goes offline.
+    // Reference mode is explicitly labelled and only used on request or after network failure.
 
     function hostedURL() {
       const current = new URL(window.location.href);
